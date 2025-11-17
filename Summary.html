@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>PERSON PROFILE - Summary</h1>
+    <p><strong>Name:</strong> <span id="summaryName"></span></p>
+    <p><strong>Email:</strong> <span id="summaryEmail"></span></p>
+    <p><strong>Gender:</strong> <span id="summaryGender"></span></p>
+    <p><strong>Date of Birth:</strong> <span id="summaryDob"></span></p>
+    <p><strong>Blood Group:</strong> <span id="summaryBloodGroup"></span></p>
+    <p><strong>Degree:</strong> <span id="summaryDegree"></span></p>
+    <p><strong>Photo:</strong> <span id="summaryPhoto"></span></p>
+
+    <script>
+        document.getElementById("summaryName").innerText = localStorage.getItem("name");
+        document.getElementById("summaryEmail").innerText = localStorage.getItem("email");
+        document.getElementById("summaryGender").innerText = localStorage.getItem("gender");
+        document.getElementById("summaryDob").innerText = localStorage.getItem("dob");
+        document.getElementById("summaryBloodGroup").innerText = localStorage.getItem("bloodGroup");
+        document.getElementById("summaryDegree").innerText = localStorage.getItem("degree");
+        document.getElementById("summaryPhoto").innerText = localStorage.getItem("photo");
+    </script>
+
+    <form action="submit.html" method="POST">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
