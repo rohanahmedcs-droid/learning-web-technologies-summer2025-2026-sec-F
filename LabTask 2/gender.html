@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Profile - Gender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>PERSON PROFILE - Step 3: Gender</h1>
+    <form onsubmit="saveGender()">
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="Male" required> Male
+        <input type="radio" id="female" name="gender" value="Female" required> Female
+        <input type="radio" id="other" name="gender" value="Other" required> Other<br><br>
+        <input type="submit" value="Next">
+    </form>
+
+    <script>
+        // Pre-fill gender if stored in localStorage
+        if(localStorage.getItem("gender")) {
+            document.getElementById(localStorage.getItem("gender")).checked = true;
+        }
+
+        function saveGender() {
+            let gender = document.querySelector('input[name="gender"]:checked').value;
+            localStorage.setItem("gender", gender);
+            window.location.href = "dob.html";
+        }
+    </script>
+</body>
+</html>

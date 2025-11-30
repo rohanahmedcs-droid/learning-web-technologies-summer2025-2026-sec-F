@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Profile - Blood Group</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>PERSON PROFILE - Step 5: Blood Group</h1>
+    <form onsubmit="saveBloodGroup()">
+        <label for="bloodGroup">Blood Group:</label>
+        <select id="bloodGroup" name="bloodGroup" required>
+            <option value="A+">A+</option>
+            <option value="B+">B+</option>
+            <option value="O+">O+</option>
+            <option value="AB+">AB+</option>
+            <option value="A-">A-</option>
+            <option value="B-">B-</option>
+            <option value="O-">O-</option>
+            <option value="AB-">AB-</option>
+        </select><br><br>
+        <input type="submit" value="Next">
+    </form>
+
+    <script>
+        // Pre-fill blood group if stored in localStorage
+        if(localStorage.getItem("bloodGroup")) {
+            document.getElementById("bloodGroup").value = localStorage.getItem("bloodGroup");
+        }
+
+        function saveBloodGroup() {
+            localStorage.setItem("bloodGroup", document.getElementById("bloodGroup").value);
+            window.location.href = "degree.html";
+        }
+    </script>
+</body>
+</html>
