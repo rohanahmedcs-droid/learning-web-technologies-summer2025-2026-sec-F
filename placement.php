@@ -1,5 +1,5 @@
 <?php
-echo "<h3>1. Odd or Even</h3>";
+echo "<h3>1. Area Perimeter</h3>";
 $length = 10;
 $width = 5;
 
